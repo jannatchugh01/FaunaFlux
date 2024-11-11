@@ -1,0 +1,211 @@
+/* public/style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color:white;}
+
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #005f3c;
+    color: white;
+    margin: 5px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin-left: 10px;
+    font-size: 24px;
+    color: white;
+    
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+header nav ul li a.active {
+    text-decoration: underline;
+}
+
+
+section {
+    margin: 20px;
+}
+
+#mapid {
+    height: 400px;
+    width: 100%;
+    margin-top: 10px;
+    border: 3px solid #005f3c;
+}
+#events{
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#events-list {
+    list-style-type:circle;
+    padding: 0;
+}
+ 
+.container{
+    display: flex;
+    gap: 50px;
+}
+
+#donation,#resources{
+    padding:20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#donation:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#resources:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* List styling */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* List item styling */
+li {
+    margin-bottom: 10px;
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+/* Styling for the search container and dropdown */
+.search-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    width: 100%;
+    z-index: 1000; /* Very high z-index for the search container */
+}
+
+#search-bar {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    color:black;
+}
+#search-bar:hover{
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1050; /* Ensure it’s above the map */
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+.dropdown-item {
+    color: #333;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+
+}
+footer {
+    background-color: #4d724d; /* Dark green background */
+    color: #ffffff; /* White text color */
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #76b983; /* Lighter green for hover effect */
+}
+
+
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Fauna Flux</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="logo.png" alt="Fauna Flux Logo">
+        <h1>Fauna Flux</h1>
+    </div>
+    <div class="container">
+        <div class="signup-form">
+            <div class="title-box">
+            <h2 class="form-title">Sign Up</h2>
+            </div>
+            <p class="required-text">Fields marked with (*) are required.</p>
+            <form id="signup-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Username*" required>
+                    <input type="text" placeholder="Organization*" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" class="email-field" placeholder="Email*" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" placeholder="Country*" required>
+                    <input type="tel" placeholder="Phone number*" required>
+                </div>
+                <div class="form-row remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <div class="form-row buttons">
+                    <button type="button" class="login-button">Login</button>
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+            <div class="success-message" id="success-message">
+                Successfully Submitted!
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

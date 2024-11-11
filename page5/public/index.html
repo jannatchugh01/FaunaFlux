@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fauna Flux</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+   
+  <header>
+    <div class="logo">
+        <img src="logo.png" alt="Fauna Flux Logo">
+        <h1 >Fauna Flux</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/NEW">Home</a></li>
+            <li><a href="/page3">Population Metrics</a></li>
+            <li><a href="/page4">Behavior Analysis</a></li>
+            <li><a href="/page5" class="active">Extinction Alert</a></li>
+            <li><a href="/page6">Community Engagement</a></li>
+            <li><a href="/page7">Climate Impact</a></li>
+            <li><a href="/page8">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- Search Bar -->
+<div class="search-container">
+<input 
+  type="text" 
+  id="search-bar" 
+  placeholder="Search for a state..." 
+  onfocus="showDropdown()" 
+  onblur="hideDropdown()" 
+  oninput="filterDropdown()"
+/>
+<div id="dropdown" class="dropdown-content">
+  <!-- List of states -->
+  <div class="dropdown-item">Gujarat</div>
+  <div class="dropdown-item">Maharashtra</div>
+  <div class="dropdown-item">Rajasthan</div>
+  <div class="dropdown-item">Karnataka</div>
+  <div class="dropdown-item">Tamil Nadu</div>
+  <div class="dropdown-item">Kerala</div>
+  <div class="dropdown-item">Punjab</div>
+</div>
+</div>
+    <div class="alert-section">
+      <section id="alert">
+        <h1>🚨 ALERT 🚨</h1></section>
+        <div id="map"></div></div>
+    <div class ="container">
+        <div class="alert-content">
+            <h3 style="color: darkred;background-color: darkgrey;">Recent Alerts:</h3>
+            <ul id="alerts-list"></ul>
+        </div>
+        <div class="chart-container">
+        <canvas id="populationChart"></canvas>
+        </div>
+    </div>
+    <footer>
+      <div class="footer-content">
+          <p>&copy; 2024 Fauna Flux. All Rights Reserved.</p>
+          <ul class="footer-links">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#privacy">Privacy Policy</a></li>
+              <li><a href="#terms">Terms of Service</a></li>
+          </ul>
+      </div>
+  </footer>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

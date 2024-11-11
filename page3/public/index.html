@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fauna Flux</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:white;
+}
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #005f3c;
+    color: white;
+    margin: 5px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin-left: 10px;
+    font-size: 24px;
+    color: white;
+    
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+header nav ul li a.active {
+    text-decoration: underline;
+}
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#events{
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#events-list {
+    list-style-type:circle;
+    padding: 0;
+}
+ /* Styling for the search container and dropdown */
+ .search-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    width: 100%;
+    z-index: 1000; /* Very high z-index for the search container */
+}
+
+#search-bar {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    color:black;
+}
+#search-bar:hover{
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1050; /* Ensure it’s above the map */
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+.dropdown-item {
+    color: #333;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+
+}
+.container{
+    display: flex;
+    gap: 50px;
+}
+
+
+h2 {
+    font-size: 1.8em;
+    color:#4d724d;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+section {
+    padding: 10px;
+    margin: 20px 0;
+    width: 80%;
+    background-color:white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+#locations-map{
+    width:100%;
+}
+.threat,.trend{
+    display:flex;
+    gap:5px;
+}
+#extinction-stats{
+    align-content: center;
+}
+section:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+footer {
+    background-color: #4d724d; /* Dark green background */
+    color: #ffffff; /* White text color */
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #76b983; /* Lighter green for hover effect */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Fauna Flux Logo">
+            <h1 >Fauna Flux</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/NEW">Home</a></li>
+                <li><a href="/page3" class="active">Population Metrics</a></li>
+                <li><a href="/page4">Behavior Analysis</a></li>
+                <li><a href="/page5">Extinction Alert</a></li>
+                <li><a href="/page6">Community Engagement</a></li>
+                <li><a href="/page7">Climate Impact</a></li>
+                <li><a href="/page8">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- Search Bar -->
+<div class="search-container">
+    <input 
+      type="text" 
+      id="search-bar" 
+      placeholder="Search for a state..." 
+      onfocus="showDropdown()" 
+      onblur="hideDropdown()" 
+      oninput="filterDropdown()"
+    />
+    <div id="dropdown" class="dropdown-content">
+      <!-- List of states -->
+      <div class="dropdown-item">Gujarat</div>
+      <div class="dropdown-item">Maharashtra</div>
+      <div class="dropdown-item">Rajasthan</div>
+      <div class="dropdown-item">Karnataka</div>
+      <div class="dropdown-item">Tamil Nadu</div>
+      <div class="dropdown-item">Kerala</div>
+      <div class="dropdown-item">Punjab</div>
+    </div>
+  </div>
+
+    <main>
+       
+    <div class="threat">
+        <section id ="Extinction_Threat">
+            <h2>Species with Threat of Extinction</h2>
+            <p>1. Mammals face the highest threat, with 200 species currently endangered, highlighting the critical need for conservation in this group, often due to habitat loss, poaching, and climate change.</p>
+            <p>2. Birds are the second most threatened group, with 150 species at risk, driven by factors like deforestation, pollution, and climate impacts affecting migration and nesting patterns.</p>
+            <p>3. Fish have 120 species threatened, largely due to overfishing, habitat destruction, and water pollution, which disrupt marine and freshwater ecosystems.</p>
+            <p>4. Reptiles face significant risks, with 80 species endangered. Habitat alteration, particularly in tropical and arid environments, plays a major role in their decline.</p>
+            <p>5. Invertebrates, despite being less publicized, have 90 species threatened, signaling ecosystem health issues since many invertebrates play vital roles in soil health and pollination.</p>
+            <p>6. Amphibians show high vulnerability, with 70 species threatened. This group is highly sensitive to environmental changes, with pollution and disease outbreaks like chytridiomycosis being major factors.</p>
+
+        </section>
+        <section id ="extinction-stats">
+        <canvas id="speciesChart"></canvas>
+        </section>
+        
+    </div>
+    <section id="locations-map">
+        <h2>Locations</h2>
+        <div id="map"></div>
+    </section>
+    <div class="trend">
+        <section id="extinction_trend">
+            <h2>Extinction Trend Over Time</h2>
+            <p>Over the past two decades, extinction threats have shown a concerning upward trend, as captured in data across years 2000 to 2020. Beginning in 2000, extinction pressures were measured at a relatively low level, with an index of 10. However, this threat has steadily risen, doubling by 2005 and increasing by an additional 10 units every five years. By 2020, the threat index reached a value of 50, signaling a fivefold increase since the start of the century. This escalation highlights the urgent need for conservation actions, particularly as various species groups, such as mammals, birds, reptiles, and amphibians, face substantial endangerment. With human activity driving habitat loss, pollution, and climate impacts, the trend suggests that without significant intervention, the risk to biodiversity will continue to grow, endangering ecosystems globally.</p>
+        </section>
+        <section id ="trend-chart">
+           
+            <canvas id="extinctionTrendChart"></canvas>
+            </section>
+        
+    </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Fauna Flux. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+
+    <!-- Include Chart.js and Leaflet.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

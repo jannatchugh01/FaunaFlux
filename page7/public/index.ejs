@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fauna Flux</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Fauna Flux</h1>
+    <nav>
+      <a href="#">Population Metrics</a>
+      <a href="#">Behavior Analysis</a>
+      <a href="#">Extinction Alert</a>
+      <a href="#">Community Engagement</a>
+      <a href="#">Climate Impact</a>
+    </nav>
+  </header>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input 
+          type="text" 
+          id="search-bar" 
+          placeholder="Search for a state..." 
+          onfocus="showDropdown()" 
+          onblur="hideDropdown()" 
+          oninput="filterDropdown()"
+        />
+        <div id="dropdown" class="dropdown-content">
+          <!-- List of states -->
+          <div class="dropdown-item">Gujarat</div>
+          <div class="dropdown-item">Maharashtra</div>
+          <div class="dropdown-item">Rajasthan</div>
+          <div class="dropdown-item">Karnataka</div>
+          <div class="dropdown-item">Tamil Nadu</div>
+          <div class="dropdown-item">Kerala</div>
+          <div class="dropdown-item">Punjab</div>
+        </div>
+      </div>
+      
+  <main>
+    <section id="map-container">
+      <h2>Map</h2>
+      <div id="map"></div>
+    </section>
+    <div class ="content">
+    <section id="strategies">
+      <h2>Strategies</h2>
+      <ul>
+        <% strategies.forEach((strategy) => { %>
+          <li><%= strategy %></li>
+        <% }) %>
+      </ul>
+    </section>
+
+    <section id="climate-data">
+      <h2>Climate Data</h2>
+      <div class="weather-grid">
+        <% climateData.forEach((data) => { %>
+          <div class="weather-card">
+            <p><strong><%= data.day %></strong></p>
+            <p>High: <%= data.tempHigh %>°C</p>
+            <p>Low: <%= data.tempLow %>°C</p>
+            <p>Weather: <%= data.weather %></p>
+          </div>
+        <% }) %>
+      </div>
+    </section></div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="map.js"></script>
+  <script src="search.js"></script>
+
+</body>
+</html>

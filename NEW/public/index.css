@@ -1,0 +1,220 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #005f3c;
+    color: white;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo h1 {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header .login-btn {
+    background-color: #4CAF50;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+
+/* Banner styling with moving background */
+.banner {
+    position: relative;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    height: 600px;
+    display: flex;
+    margin:3px;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide:first-child {
+    opacity: 1;
+}
+
+.banner h2 {
+    position: relative;
+    z-index: 1; /* Ensure text stays above sliding images */
+    font-size: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a slight background for readability */
+    border-radius: 8px;
+    color: white;
+}
+
+/* Main content styling */
+main {
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.upload-section, .features {
+    width: 45%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 8px rgba(231, 221, 221, 0.2);
+    height: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-section h3, .features h3 {
+    color: #005f3c;
+    margin-bottom: 10px;
+    
+}
+
+.upload-section p, .features ul {
+    font-size: 20px;
+    color: #005f3c;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.features ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+/* Hover effect for both sections */
+.upload-section:hover, .features:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Submit button styling */
+#uploadBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    height: 50px;
+    width: 100px;
+}
+a{
+    color: white;
+}
+
+/* Quote Banner styling */
+.quote-banner {
+    position: relative;
+    text-align: center;
+    color:#e6ecea;
+    overflow: hidden;
+    padding: 50px 20px;
+    height: 400px;
+}
+
+.quote-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.quote-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.quote-slide p {
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+}
+
+.quote-slide:first-child {
+    opacity: 1;
+}
+
+/* Footer styling */
+footer {
+    background-color: #005f3c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 20px;
+}

@@ -1,0 +1,234 @@
+/* public/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #005f3c;
+  color: white;
+  margin: 5px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo h1 {
+  margin-left: 10px;
+  font-size: 24px;
+  color: white;
+  
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+header nav ul li a.active {
+  text-decoration: underline;
+}
+
+
+section {
+  margin: 20px;
+}
+
+
+/* Styling for the search container and dropdown */
+.search-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
+  z-index: 1000; /* Very high z-index for the search container */
+}
+
+#search-bar {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  color:black;
+}
+#search-bar:hover{
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  z-index: 1050; /* Ensure it’s above the map */
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.dropdown-item {
+  color: #333;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #ddd;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+
+}
+footer {
+  background-color: #4d724d; /* Dark green background */
+  color: #ffffff; /* White text color */
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 1em;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #76b983; /* Lighter green for hover effect */
+}
+
+
+  #map-container {
+    margin: 20px;
+    text-align: center;
+  }
+  #map:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  
+  #map ,#stratergies{
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  a:hover {
+    color: #2980b9;
+  }
+  
+  #strategies,
+  #climate-data {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-image: url(back.jpg);
+    background-size: cover;
+    color:white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .weather-grid {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+   
+  }
+  
+  .weather-card {
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+    background-color: white;
+    color: black;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  .weather-card:hover{
+    background-color:rgb(159, 188, 242);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  .content {
+    display: flex;
+    gap: 10px;
+  }
+  /* Styling for the search container and dropdown */
+.search-container {
+    position: relative;
+    width: 100%;
+    background-color: black;
+    display: inline-block;
+    margin-top: 10px;
+    z-index: 1000; /* Ensure the search container is above other content */
+  }
+  
+  #search-bar {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: black;
+    color:white;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 5000; /* Set a high z-index to keep it above the map */
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+  
+  .dropdown-item {
+    color: #333;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #ddd;
+  }
+  

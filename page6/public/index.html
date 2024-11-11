@@ -1,0 +1,100 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fauna Flux</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Fauna Flux Logo">
+            <h1 >Fauna Flux</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/NEW">Home</a></li>
+                <li><a href="/page3">Population Metrics</a></li>
+                <li><a href="/page4">Behavior Analysis</a></li>
+                <li><a href="/page5">Extinction Alert</a></li>
+                <li><a href="/page6" class="active">Community Engagement</a></li>
+                <li><a href="/page7">Climate Impact</a></li>
+                <li><a href="/page8">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- Search Bar -->
+<div class="search-container">
+    <input 
+      type="text" 
+      id="search-bar" 
+      placeholder="Search for a state..." 
+      onfocus="showDropdown()" 
+      onblur="hideDropdown()" 
+      oninput="filterDropdown()"
+    />
+    <div id="dropdown" class="dropdown-content">
+      <!-- List of states -->
+      <div class="dropdown-item">Gujarat</div>
+      <div class="dropdown-item">Maharashtra</div>
+      <div class="dropdown-item">Rajasthan</div>
+      <div class="dropdown-item">Karnataka</div>
+      <div class="dropdown-item">Tamil Nadu</div>
+      <div class="dropdown-item">Kerala</div>
+      <div class="dropdown-item">Punjab</div>
+    </div>
+  </div>
+
+
+    <main>
+        <div class="container">
+        <section id="donation">
+            <h2>Donation</h2>
+            <p>Support wildlife protection efforts by choosing one of the following options:</p>
+            <ul>
+                <li><a href="https://www.worldwildlife.org/" target="_blank">Donate to World Wildlife Fund (WWF)</a></li>
+                <li><a href="https://www.wcs.org/" target="_blank">Donate to Wildlife Conservation Society (WCS)</a></li>
+                <li><a href="https://www.nationalgeographic.org/society/give/" target="_blank">Donate to National Geographic Society</a></li>
+                <li><a href="https://www.conservation.org/" target="_blank">Donate to Conservation International</a></li>
+            </ul>
+        </section>
+        
+        <section id="resources">
+            <h2>Educational Resources</h2>
+            <p>Learn more about wildlife conservation through these educational resources:</p>
+            <ul>
+                <li><a href="https://www.worldwildlife.org/initiatives" target="_blank">World Wildlife Fund - Conservation Initiatives</a></li>
+                <li><a href="https://www.nationalgeographic.org/topics/resource-library-conservation/" target="_blank">National Geographic - Conservation Resources</a></li>
+                <li><a href="https://www.conservation.org/priorities/protecting-nature" target="_blank">Conservation International - Protecting Nature</a></li>
+                <li><a href="https://www.wcs.org/education" target="_blank">Wildlife Conservation Society - Educational Programs</a></li>
+            </ul>
+        </section>
+        </div>
+        <section id="map">
+            <h2>Location Map</h2>
+            <div id="mapid"></div>
+        </section>
+
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <div id="events-list"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Fauna Flux. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
