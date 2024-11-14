@@ -6,3 +6,6 @@ Key Features:
 •	Species Extinction Alert: Provides early warnings to prevent species extinction with actionable data.
 •	Community Engagement Metrics: Encourages collaboration between conservationists and local communities.
 •	Climate Change Impact: Assesses the effect of climate changes on ecosystems and wildlife populations.
+
+Link of prototype: http://139.84.175.245:1000/NEW
+Chatbot Link: https://github.com/AREEBA-786/laravel-ChatBot-.git
