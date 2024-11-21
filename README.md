@@ -8,4 +8,3 @@ Key Features:
 •	Climate Change Impact: Assesses the effect of climate changes on ecosystems and wildlife populations.
 
 Link of prototype: http://139.84.175.245:1000/NEW
-Chatbot Link: https://github.com/AREEBA-786/laravel-ChatBot-.git
